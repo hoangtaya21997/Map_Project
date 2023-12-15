@@ -1,4 +1,3 @@
-
 const ApiData = [
     {
         id:"1",
@@ -21,7 +20,7 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 20,
+        finished: 40,
     },
 
     //Show Greenline data
@@ -50,18 +49,29 @@ const kmH = document.getElementById('kmH');
 const kmHinfor = document.getElementById('kmHinfor');
 const time = document.getElementById('time');
 const contentDiv = document.getElementById('content');
+let activeItem = 0
 
 ApiData.forEach(item => {
     handleFillSvgMap(item)
     const div = document.getElementById(item.id);
     div?.addEventListener('click', () => {
-        handleShowInfo(item);
-        handleShowDetailMap(item);
+        //desktop
+        if(window.innerWidth > 768) {
+            if(activeItem !== item.id) {
+                handleShowInfo(item);
+                handleShowDetailMap(item);
+            }
+            activeItem = item.id
+        //mobile
+        } else {
+            document.getElementById('map').classList.remove('show');
+            handleShowInfo(item);
+            handleShowDetailMap(item);
+        }
     });
 });
 
 function handleShowDetailMap(item) {
-
     elements = document.getElementsByClassName('map-detai');
     const elementsActive = document.querySelector(`.map-detail-${item?.id}`)
     if(elementsActive) {
@@ -83,8 +93,7 @@ function handleFillSvgMap(item) {
 }
 
 const handleShowInfo = (item) => {
-    document.getElementById('content').style.opacity = '1'
-
+    document.getElementById('content').classList.add('show');
     if(km){km.textContent = item.finished + `KM`; km.classList.add('w3-animate-zoom');};
     if(info){info.textContent = item.info; info.classList.add('w3-animate-zoom')} ;
     if(lanes){lanes.textContent = item.lanes; lanes.classList.add('w3-animate-zoom')};
@@ -105,19 +114,29 @@ const handleShowInfo = (item) => {
 }
 
 function handleSetAnimationline(percentage) {
-    handleResetAnimation()
+    handleResetAnimation();
+    handleFillLine(percentage);
+    setPoSitionDotArrow();
+}
 
+function handleFillLine(percentage) {
     const currentPath = document.querySelector('.map-detai.active .path-line');
     const heightLine =  currentPath.dataset.strokeDasharray;
     const newWidth = ( (heightLine * percentage ) / 100)
     currentPath.style.strokeDasharray = `${heightLine}`;
-    currentPath.style.strokeDashoffset = `${heightLine - newWidth}`;
-    const startPoint = currentPath.getPointAtLength(0);
 
-    setPoSitionDotArrow(startPoint)
-    setTimeout(() => setPoSitionHeadArrow(), 1500);
+    let value = heightLine;
+    function decreaseValue() {
+        if (value >= (heightLine - newWidth)) {
+            value--;
+            currentPath.style.strokeDashoffset = `${value}`;
+            setPoSitionHeadArrow()
+        } else {
+            clearInterval(intervalId);
+        }
+    }
+    const intervalId = setInterval(decreaseValue, 3);
 }
-
 
 function handleResetAnimation () {
     const currentPathNoactive = document.querySelectorAll('.path-line');
@@ -127,12 +146,14 @@ function handleResetAnimation () {
     })
 }
 
-function setPoSitionDotArrow (startPoint) {
+function setPoSitionDotArrow () {
+    const currentPath = document.querySelector('.map-detai.active .path-line');
+    const startPoint = currentPath.getPointAtLength(0);
+
     const image = document.querySelector('.map-detai.active .arrow-dot');
     image.setAttribute('x', startPoint.x - 15); 
     image.setAttribute('y', startPoint.y - 15);
 }
-
 
 function setPoSitionHeadArrow () {
     const originalPath = document.querySelector('.map-detai.active .path-line');
@@ -141,6 +162,42 @@ function setPoSitionHeadArrow () {
     const endPoint1 = originalPath.getPointAtLength(totalLength - dashoffset);
 
   const image = document.querySelector('.map-detai.active .arrow-head');
-  image.setAttribute('x', endPoint1.x - 23); 
+  image.setAttribute('x', endPoint1.x - 23);
   image.setAttribute('y', endPoint1.y - 25);
 }
+
+//Mobile
+const buttonShowMap = document.getElementById("show-map");
+buttonShowMap.addEventListener("click", function() {
+    window.scrollTo(0, 0);
+    const map = document.getElementById("map")
+    const detaiMap = document.querySelector('.map-detai.active')
+    const content = document.getElementById("content")
+
+    map && map.classList.add('show');
+    detaiMap && detaiMap.classList.remove('active');
+    content && content.classList.remove('show');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var myDiv = document.getElementById("responsive-js");
+    function checkAndScale() {
+       if(window.innerWidth > 1440) {
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        var divWidth = myDiv.offsetWidth;
+        var divHeight = myDiv.offsetHeight;
+
+        console.log(divWidth)
+
+        if (divWidth < windowWidth || divHeight < windowHeight) {
+            var scaleX = windowWidth / divWidth;
+            var scaleY = windowHeight / divHeight;
+            myDiv.style.transform = "scale(" + Math.min(scaleX, scaleY) + ")";
+        }
+       }
+    }
+    window.addEventListener("resize", checkAndScale);
+    document.addEventListener("DOMContentLoaded", checkAndScale());
+});

@@ -32,6 +32,11 @@ h4 {
     cursor: pointer;
 }
 
+.button.disable {
+    pointer-events: none;
+    cursor: pointer;
+}
+
 .button:hover {
     opacity: 0.6;
 }
@@ -44,6 +49,12 @@ h4 {
     align-items: center;
 }
 
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .event-hidden {
     pointer-events: none;
 }
@@ -52,6 +63,10 @@ h4 {
     padding-top: 92px;
     width: 455px;
     opacity: 0;
+}
+
+.infor.show {
+    opacity: 1;
     transition: opacity 2.5s;
 }
 
@@ -69,11 +84,17 @@ h4 {
     margin-right: 37px;
 }
 
+.infor .item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
 .infor .item  .total-km {
     font-family: 'BeVietnamProBold';
     font-weight: 700;
     text-transform: uppercase;
-    transition: ease-in .7s;
+    font-size: 18px;
 }
 
 .infor .item  .local-km {
@@ -87,6 +108,13 @@ h4 {
 
 /*MAP*/
 .map{
+    display: none;
+    width: 587px;
+    min-width: 587px;
+}
+
+.map.show{
+    display: block;
     width: 587px;
     min-width: 587px;
 }
@@ -129,6 +157,10 @@ h4 {
     min-width: 398px;
 }
 
+.map-wrap img {
+    width: 100%;
+}
+
 .map-detai .arrow-wrap {
     position: absolute;
 }
@@ -144,10 +176,10 @@ h4 {
     transform: rotate(1deg);
 }
 
-.path-line  {
+/* .path-line  {
     transition: all 1s;
     transition-delay: 0.5s;
-}
+} */
 .pat-line-1 {
     stroke-dasharray: 320;
     stroke-dashoffset: 320;
@@ -158,19 +190,16 @@ h4 {
     stroke-dashoffset: 372;
 }
 
-image.arrow-head {
+/* image.arrow-head {
     opacity: 0;
     transition: opacity .2s;
     transition-delay: 1.5s;
-}
+} */
 
 .map-detai.active  image.arrow-head{
     opacity: 1;
 }
 
-.map-wrap {
-    width: 398px;
-}
 
 .map-detai {
     height: 0;
@@ -193,11 +222,74 @@ image.arrow-head {
     width: 100%;
 }
 
-@media screen and (min-width: 1441px) {
-    body {
+.button-mobile {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        /* align-items: flex-start; */
+    }
+    .map.show{
+        width: 100%;
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+    }
+    .map-content {
+        padding: 0;
+        width: 100%;
+    }
+    .button-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        padding: 0 33px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #D2D2D2;
+        height: 30px;
+        z-index: 999;
+    }
+    .button-mobile .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .button-mobile .button p{
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: #000;
+        margin: 0 6px;
+    }
+    .button-mobile .right svg{
+        transform: scale(-1);
+    }
+    .infor {
+        height: 0;
+        padding: 0;
         overflow: hidden;
     }
-    .container {
-        transform: scale(1.2);
+    .infor.show{
+        width: 100%;
+        height: auto;
+        padding: 28px 14px 30px 25px;
+        overflow: auto;
     }
+    .infor .item {
+        font-size: 18px;
+        margin-left: 0;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+    .infor .item .total-km {
+        font-size: 18px;
+    }
+
 }
