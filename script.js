@@ -127,7 +127,7 @@ function handleFillLine(percentage) {
 
     let value = heightLine;
     function decreaseValue() {
-        if (value >= (heightLine - newWidth)) {
+        if (value > (heightLine - newWidth)) {
             value--;
             currentPath.style.strokeDashoffset = `${value}`;
             setPoSitionHeadArrow()
