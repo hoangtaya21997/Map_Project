@@ -8,7 +8,7 @@ const ApiData = [
         kmHinfor: 'Sau khi hoàn chỉnh toàn tuyến sẽ là 120km/h',
         time: '01/07/2021 - 09/2023',
         total: 100,
-        finished: 100,
+        finished: 50,
     },
     {
         id:"2",
@@ -20,7 +20,7 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 40,
+        finished: 100,
     },
 
     //Show Greenline data
@@ -80,7 +80,7 @@ function handleShowDetailMap(item) {
         }
         elementsActive && elementsActive.classList.add('active');
     }
-    handleSetAnimationline(item.finished*100/item.total)
+    handleSetAnimationExtendline(item.finished*100/item.total)
 }
 
 function handleFillSvgMap(item) {
@@ -113,57 +113,16 @@ const handleShowInfo = (item) => {
     }, 1000);
 }
 
-function handleSetAnimationline(percentage) {
-    handleResetAnimation();
-    handleFillLine(percentage);
-    setPoSitionDotArrow();
-}
-
-function handleFillLine(percentage) {
+function handleSetAnimationExtendline(percentage) {
     const currentPath = document.querySelector('.map-detai.active .path-line');
     const heightLine =  currentPath.dataset.strokeDasharray;
-    const newWidth = ( (heightLine * percentage ) / 100)
-    currentPath.style.strokeDasharray = `${heightLine}`;
+    const animateMotion = document.querySelector('.map-detai.active animateMotion');
+    const animate = document.querySelector('.map-detai.active animate');
 
-    let value = heightLine;
-    function decreaseValue() {
-        if (value > (heightLine - newWidth)) {
-            value--;
-            currentPath.style.strokeDashoffset = `${value}`;
-            setPoSitionHeadArrow()
-        } else {
-            clearInterval(intervalId);
-        }
-    }
-    const intervalId = setInterval(decreaseValue, 3);
-}
-
-function handleResetAnimation () {
-    const currentPathNoactive = document.querySelectorAll('.path-line');
-    currentPathNoactive.forEach(function(divElement) {
-        const divElement1 =  divElement.dataset.strokeDasharray;
-        divElement.style.strokeDashoffset = `${divElement1}`;
-    })
-}
-
-function setPoSitionDotArrow () {
-    const currentPath = document.querySelector('.map-detai.active .path-line');
-    const startPoint = currentPath.getPointAtLength(0);
-
-    const image = document.querySelector('.map-detai.active .arrow-dot');
-    image.setAttribute('x', startPoint.x - 15); 
-    image.setAttribute('y', startPoint.y - 15);
-}
-
-function setPoSitionHeadArrow () {
-    const originalPath = document.querySelector('.map-detai.active .path-line');
-    const totalLength = originalPath.getTotalLength();
-    const dashoffset = parseFloat(window.getComputedStyle(originalPath).strokeDashoffset);
-    const endPoint1 = originalPath.getPointAtLength(totalLength - dashoffset);
-
-  const image = document.querySelector('.map-detai.active .arrow-head');
-  image.setAttribute('x', endPoint1.x - 23);
-  image.setAttribute('y', endPoint1.y - 25);
+    animate.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
+    animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
+    animateMotion.beginElement();
+    animate.beginElement();
 }
 
 //Mobile

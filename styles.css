@@ -171,15 +171,19 @@ h4 {
 }
 
 .arrow-line-2 {
-    bottom: 40px;
-    left: 133px;
-    transform: rotate(1deg);
+    bottom: 100px;
+    left: 136px;
+    transform: rotate(0deg);
 }
 
-/* .path-line  {
-    transition: all 1s;
-    transition-delay: 0.5s;
-} */
+.arrow-1 {
+    transform: rotate(-87deg) translate(-22px, -17px);
+}
+
+.arrow-2 {
+    transform: rotate(-87deg) translate(-22px, -17px);
+}
+
 .pat-line-1 {
     stroke-dasharray: 320;
     stroke-dashoffset: 320;
@@ -190,16 +194,9 @@ h4 {
     stroke-dashoffset: 372;
 }
 
-/* image.arrow-head {
-    opacity: 0;
-    transition: opacity .2s;
-    transition-delay: 1.5s;
-} */
-
 .map-detai.active  image.arrow-head{
     opacity: 1;
 }
-
 
 .map-detai {
     height: 0;
