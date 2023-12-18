@@ -94,22 +94,22 @@ function handleFillSvgMap(item) {
 
 const handleShowInfo = (item) => {
     document.getElementById('content').classList.add('show');
-    if(km){km.textContent = item.finished + `KM`; km.classList.add('w3-animate-zoom');};
-    if(info){info.textContent = item.info; info.classList.add('w3-animate-zoom')} ;
-    if(lanes){lanes.textContent = item.lanes; lanes.classList.add('w3-animate-zoom')};
-    if(lanesInfor){lanesInfor.textContent = item.lanesInfor; lanesInfor.classList.add('w3-animate-zoom')};
-    if(kmH){kmH.textContent = item.kmH; kmH.classList.add('w3-animate-zoom')};
-    if(kmHinfor){kmHinfor.textContent = item.kmHinfor; kmHinfor.classList.add('w3-animate-zoom')};
-    if(time){time.textContent = item.time; time.classList.add('w3-animate-zoom')};
+    if(km){km.textContent = item.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
+    if(info){info.textContent = item.info; info.classList.add('animate__animated', 'animate__pulse')} ;
+    if(lanes){lanes.textContent = item.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
+    if(lanesInfor){lanesInfor.textContent = item.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
+    if(kmH){kmH.textContent = item.kmH; kmH.classList.add('animate__animated', 'animate__pulse')};
+    if(kmHinfor){kmHinfor.textContent = item.kmHinfor; kmHinfor.classList.add('animate__animated', 'animate__pulse')};
+    if(time){time.textContent = item.time; time.classList.add('animate__animated', 'animate__pulse')};
 
     setTimeout(function() {
-        km.classList.remove('w3-animate-zoom');
-        info.classList.remove('w3-animate-zoom');
-        lanes.classList.remove('w3-animate-zoom');
-        lanesInfor.classList.remove('w3-animate-zoom');
-        kmH.classList.remove('w3-animate-zoom');
-        kmHinfor.classList.remove('w3-animate-zoom');
-        time.classList.remove('w3-animate-zoom');
+        km.classList.remove('animate__pulse');
+        info.classList.remove('animate__pulse');
+        lanes.classList.remove('animate__pulse');
+        lanesInfor.classList.remove('animate__pulse');
+        kmH.classList.remove('animate__pulse');
+        kmHinfor.classList.remove('animate__pulse');
+        time.classList.remove('animate__pulse');
     }, 1000);
 }
 
