@@ -176,14 +176,6 @@ h4 {
     transform: rotate(0deg);
 }
 
-.arrow-1 {
-    transform: rotate(-87deg) translate(-22px, -17px);
-}
-
-.arrow-2 {
-    transform: rotate(-87deg) translate(-22px, -17px);
-}
-
 .pat-line-1 {
     stroke-dasharray: 320;
     stroke-dashoffset: 320;
