@@ -166,24 +166,32 @@ h4 {
 }
 
 .arrow-line-1 {
-    bottom: 42px;
-    left: 90px;
+    bottom: 203px;
+    left: 129px;
 }
 
 .arrow-line-2 {
-    bottom: 100px;
-    left: 136px;
-    transform: rotate(0deg);
+    bottom: 248px;
+    left: 142px;
+}
+
+.arrow-line-3 {
+    bottom: 184px;
+    left: 168px;
 }
 
 .pat-line-1 {
-    stroke-dasharray: 320;
-    stroke-dashoffset: 320;
+    stroke-dasharray: 154;
+    stroke-dashoffset: 154;
 }
 
 .pat-line-2 {
-    stroke-dasharray: 372;
-    stroke-dashoffset: 372;
+    stroke-dasharray: 184;
+    stroke-dashoffset: 184;
+}
+.pat-line-3 {
+    stroke-dasharray: 216;
+    stroke-dashoffset: 216;
 }
 
 .map-detai.active  image.arrow-head{
