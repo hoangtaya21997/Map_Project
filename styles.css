@@ -180,6 +180,41 @@ h4 {
     left: 168px;
 }
 
+.arrow-line-4 {
+    bottom: 222px;
+    left: 139px;
+}
+
+.arrow-line-5 {
+    bottom: 255px;
+    left: 157px;
+}
+
+.arrow-line-6 {
+    bottom: 222px;
+    left: 139px;
+}
+
+.arrow-line-7 {
+    bottom: 222px;
+    left: 139px;
+}
+
+.arrow-line-8 {
+    bottom: 222px;
+    left: 139px;
+}
+
+.arrow-line-9 {
+    bottom: 222px;
+    left: 139px;
+}
+
+.arrow-line-10 {
+    bottom: 222px;
+    left: 139px;
+}
+
 .pat-line-1 {
     stroke-dasharray: 154;
     stroke-dashoffset: 154;
@@ -193,6 +228,37 @@ h4 {
     stroke-dasharray: 216;
     stroke-dashoffset: 216;
 }
+
+.pat-line-4 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+
+.pat-line-5 {
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173;
+}
+.pat-line-6 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+.pat-line-7 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+.pat-line-8 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+.pat-line-9 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+.pat-line-10 {
+    stroke-dasharray: 138;
+    stroke-dashoffset: 138;
+}
+
 
 .map-detai.active  image.arrow-head{
     opacity: 1;
