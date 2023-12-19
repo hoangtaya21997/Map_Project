@@ -153,8 +153,16 @@ h4 {
 
 /*DETAIL MAP*/
 .map-wrap {
+    min-width: fit-content;
     width: 398px;
-    min-width: 398px;
+}
+
+.map-detai {
+    width: 398px;
+}
+
+.map-detai.img-big {
+    width: 515px;
 }
 
 .map-wrap img {
@@ -215,52 +223,52 @@ h4 {
     left: 182px;
 }
 .arrow-line-11 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 204px;
+    left: 217px;
 }
 .arrow-line-12 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 193px;
+    left: 256px;
 }
 .arrow-line-13 {
     bottom: 224px;
-    left: 182px;
+    left: 208px;
 }
 .arrow-line-14 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 232px;
+    left: 189px;
 }
 .arrow-line-15 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 164px;
+    left: 183px;
 }
 .arrow-line-16 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 210px;
+    left: 47px;
 }
 .arrow-line-17 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 312px;
+    left: 21px;
 }
 .arrow-line-18 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 200px;
+    left: 157px;
 }
 .arrow-line-19 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 237px;
+    left: 118px;
 }
 .arrow-line-20 {
     bottom: 224px;
-    left: 182px;
+    left: 45px;
 }
 .arrow-line-21 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 95px;
+    left: 16px;
 }
 .arrow-line-22 {
-    bottom: 224px;
-    left: 182px;
+    bottom: 327px;
+    left: 134px;
 }
 .arrow-line-23 {
     bottom: 224px;
@@ -319,52 +327,52 @@ h4 {
     stroke-dashoffset: 256;
 }
 .pat-line-11 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 244;
+    stroke-dashoffset: 244;
 }
 .pat-line-12 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
 }
 .pat-line-13 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 224;
+    stroke-dashoffset: 224;
 }
 .pat-line-14 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 128;
+    stroke-dashoffset: 128;
 }
 .pat-line-15 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 224;
+    stroke-dashoffset: 224;
 }
 .pat-line-16 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 286;
+    stroke-dashoffset: 286;
 }
 .pat-line-17 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 290;
+    stroke-dashoffset: 290;
 }
 .pat-line-18 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 245;
+    stroke-dashoffset: 245;
 }
 .pat-line-19 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 137;
+    stroke-dashoffset: 137;
 }
 .pat-line-20 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 284;
+    stroke-dashoffset: 284;
 }
 .pat-line-21 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 586;
+    stroke-dashoffset: 586;
 }
 .pat-line-22 {
-    stroke-dasharray: 256;
-    stroke-dashoffset: 256;
+    stroke-dasharray: 149;
+    stroke-dashoffset: 149;
 }
 .pat-line-23 {
     stroke-dasharray: 256;
