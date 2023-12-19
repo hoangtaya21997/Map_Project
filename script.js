@@ -120,7 +120,7 @@ function handleSetAnimationExtendline(percentage) {
     const animate = document.querySelector('.map-detai.active animate');
 
     animate.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
-    animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
+    // animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
     animateMotion.beginElement();
     animate.beginElement();
 }
