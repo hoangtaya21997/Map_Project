@@ -368,20 +368,20 @@ buttonShowMap.addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
     var myDiv = document.getElementById("responsive-js");
     function checkAndScale() {
-       if(window.innerWidth > 1440) {
+       if(window.innerWidth > 768) {
         var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
         var divWidth = myDiv.offsetWidth;
         var divHeight = myDiv.offsetHeight;
-
-        console.log(divWidth)
-
         if (divWidth < windowWidth || divHeight < windowHeight) {
             var scaleX = windowWidth / divWidth;
             var scaleY = windowHeight / divHeight;
             myDiv.style.transform = "scale(" + Math.min(scaleX, scaleY) + ")";
         }
+       }
+       else {
+        myDiv.style.transform = "scale(1)";
        }
     }
     window.addEventListener("resize", checkAndScale);
