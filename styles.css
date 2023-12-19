@@ -150,7 +150,6 @@ h4 {
     stroke: transparent;
 }
 
-
 /*DETAIL MAP*/
 .map-wrap {
     min-width: fit-content;
@@ -159,10 +158,6 @@ h4 {
 
 .map-detai {
     width: 398px;
-}
-
-.map-detai.img-big {
-    width: 515px;
 }
 
 .map-wrap img {
@@ -264,7 +259,7 @@ h4 {
 }
 .arrow-line-21 {
     bottom: 95px;
-    left: 16px;
+    left: 12px;
 }
 .arrow-line-22 {
     bottom: 327px;
