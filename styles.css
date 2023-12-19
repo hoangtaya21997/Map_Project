@@ -411,8 +411,7 @@ h4 {
     display: none;
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
     .flex {
         align-items: center;
         flex-wrap: wrap;
@@ -433,7 +432,7 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: sticky;
+        position: fixed;
         padding: 0 33px;
         bottom: 0;
         left: 0;
