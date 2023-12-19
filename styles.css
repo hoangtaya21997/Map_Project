@@ -61,12 +61,7 @@ h4 {
 .infor {
     padding-top: 92px;
     width: 455px;
-    opacity: 0;
-}
-
-.infor.show {
     opacity: 1;
-    transition: opacity 2.5s;
 }
 
 .infor .item {
@@ -416,6 +411,7 @@ h4 {
         align-items: center;
         flex-wrap: wrap;
         height: 100%;
+        width: 100%;
     }
     .map.show{
         width: 100%;
@@ -461,6 +457,7 @@ h4 {
         padding: 0;
         overflow: hidden;
         width: 0;
+        opacity: 0;
     }
     .infor.show{
         width: 100%;
@@ -468,6 +465,7 @@ h4 {
         padding: 28px 14px 30px 25px;
         overflow: auto;
         background: #fff;
+        opacity: 1;
     }
     .infor .item {
         font-size: 18px;
@@ -482,6 +480,10 @@ h4 {
     .map-wrap {
         width: 100%;
         background: #fff;
+        display: none;
+    }
+    .map-wrap.show {
+        display: block;
     }
     .map-detai.active {
         background: #fff;

@@ -291,6 +291,8 @@ ApiData.forEach(item => {
             activeItem = item.id
         //mobile
         } else {
+            document.getElementById('list-detail-map').classList.add('show');
+            document.getElementById('content').classList.add('show');
             document.getElementById('map').classList.remove('show');
             handleShowInfo(item);
             handleShowDetailMap(item);
@@ -320,7 +322,6 @@ function handleFillSvgMap(item) {
 }
 
 const handleShowInfo = (item) => {
-    document.getElementById('content').classList.add('show');
     if(km){km.textContent = item.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
     if(info){info.textContent = item.info; info.classList.add('animate__animated', 'animate__pulse')} ;
     if(lanes){lanes.textContent = item.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
@@ -366,17 +367,16 @@ buttonShowMap.addEventListener("click", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    var myDiv = document.getElementById("responsive-js");
+    const myDiv = document.getElementById("responsive-js");
     function checkAndScale() {
        if(window.innerWidth > 820) {
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        var divWidth = myDiv.offsetWidth;
-        var divHeight = myDiv.offsetHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        const divWidth = myDiv.offsetWidth;
+        const divHeight = myDiv.offsetHeight;
         if (divWidth < windowWidth || divHeight < windowHeight) {
-            var scaleX = windowWidth / divWidth;
-            var scaleY = windowHeight / divHeight;
+            const scaleX = windowWidth / divWidth;
+            const scaleY = windowHeight / divHeight;
             myDiv.style.transform = "scale(" + Math.min(scaleX, scaleY) + ")";
         }
        }
