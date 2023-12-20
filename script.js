@@ -178,7 +178,7 @@ const ApiData = [
         total: 100,
         finished: 100,
         status: {
-            isComplete: true,
+            isComplete: false,
             name: 'cl-vh',
         }
     },

@@ -36,9 +36,23 @@ h4 {
     animation: changeColor 1.5s infinite;
 }
 
+.button.clicking.green {
+    animation: changeColorGreen 1.5s infinite;
+}
+
+.button.green:hover {
+     opacity: 0.6;
+     fill: rgb(98, 176, 143);
+}
+
+@keyframes changeColorGreen {
+    from {opacity: 1;}
+    to {opacity: 0.6}
+  }
+
 @keyframes changeColor {
-    from {fill: rgb(15, 155, 75);}
-    to {fill: rgb(255, 25, 32);}
+    from {fill: #fff;}
+    to {fill: rgb(190, 190, 190)}
   }
 
 .map svg .button.active.clicking {
