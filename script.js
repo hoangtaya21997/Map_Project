@@ -276,7 +276,8 @@ const kmH = document.getElementById('kmH');
 const kmHinfor = document.getElementById('kmHinfor');
 const time = document.getElementById('time');
 const contentDiv = document.getElementById('content');
-let activeItem = 0
+let activeItem = 0;
+let intervalResetAnimationLine;
 
 ApiData.forEach(item => {
     handleFillSvgMap(item)
@@ -303,12 +304,9 @@ ApiData.forEach(item => {
 
 function handleActiveButtonMap(item) {
     const listButton = document.querySelectorAll('.button');
-
     listButton.forEach(button => {
         button.classList.remove('clicking');
     });
-
-    console.log(document.getElementById(`${item.id}`))
     document.getElementById(`${item.id}`).classList.add('clicking');
 }
 
@@ -351,18 +349,6 @@ const handleShowInfo = (item) => {
         kmHinfor.classList.remove('animate__pulse');
         time.classList.remove('animate__pulse');
     }, 1000);
-}
-
-function handleSetAnimationExtendline(percentage) {
-    const currentPath = document.querySelector('.map-detai.active .path-line');
-    const heightLine =  currentPath.dataset.strokeDasharray;
-    const animateMotion = document.querySelector('.map-detai.active animateMotion');
-    const animate = document.querySelector('.map-detai.active animate');
-
-    animate.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
-    animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
-    animateMotion.beginElement();
-    animate.beginElement();
 }
 
 //Mobile
@@ -417,4 +403,31 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById(dedaultData.id).classList.remove('clicking');
         }
     }
+});
+
+function handleSetAnimationExtendline(percentage) {
+    clearInterval(intervalResetAnimationLine);
+    const currentPath = document.querySelector('.map-detai.active .path-line');
+    const heightLine =  currentPath.dataset.strokeDasharray;
+    const animateMotion = document.querySelector('.map-detai.active animateMotion');
+    const animate = document.querySelector('.map-detai.active animate');
+    animate.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
+    animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
+    animateMotion.beginElement();
+    animate.beginElement();
+    resertAnimation()
+}
+
+function resertAnimation () {
+    const animateMotion = document.querySelector('.map-detai.active animateMotion');
+    const animate = document.querySelector('.map-detai.active animate');
+    intervalResetAnimationLine =  setInterval(() => {
+        animateMotion &&  animateMotion.beginElement();
+        animate && animate.beginElement();
+    }, 3000);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const animate = document.querySelector('.map-detai.active animate');
+    animate && animate.addEventListener("repeatEvent", resertAnimation());
 });

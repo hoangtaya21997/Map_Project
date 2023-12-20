@@ -43,7 +43,8 @@ h4 {
 }
 
 .button:hover {
-    opacity: 0.6;
+    fill: rgb(198, 198, 198);
+    stroke-width: 1.54978px;
 }
 
 .container {
