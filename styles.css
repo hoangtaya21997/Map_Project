@@ -34,7 +34,16 @@ h4 {
 
 .button.clicking {
     fill: rgb(198, 198, 198);
-    stroke-width: 1.54978px;
+}
+
+.map svg .button.active.clicking {
+    fill: rgb(198, 198, 198);
+    stroke: rgb(198, 198, 198);;
+}
+
+.map svg .button.active:hover {
+    fill: rgb(198, 198, 198);
+    stroke: rgb(198, 198, 198);;
 }
 
 .button.disable {
