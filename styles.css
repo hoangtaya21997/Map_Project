@@ -41,13 +41,12 @@ h4 {
 }
 
 .button.green:hover {
-     opacity: 0.6;
-     fill: rgb(98, 176, 143);
+     fill: rgb(58, 114, 90);
 }
 
 @keyframes changeColorGreen {
-    from {opacity: 1;}
-    to {opacity: 0.6}
+    from {fill: rgb(98, 176, 143);}
+    to {fill: rgb(58, 114, 90)}
   }
 
 @keyframes changeColor {
