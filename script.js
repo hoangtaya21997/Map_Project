@@ -285,6 +285,7 @@ ApiData.forEach(item => {
         //desktop
         if(window.innerWidth > 768) {
             if(activeItem !== item.id) {
+                handleActiveButtonMap(item);
                 handleShowInfo(item);
                 handleShowDetailMap(item);
             }
@@ -299,6 +300,17 @@ ApiData.forEach(item => {
         }
     });
 });
+
+function handleActiveButtonMap(item) {
+    const listButton = document.querySelectorAll('.button');
+
+    listButton.forEach(button => {
+        button.classList.remove('clicking');
+    });
+
+    console.log(document.getElementById(`${item.id}`))
+    document.getElementById(`${item.id}`).classList.add('clicking');
+}
 
 function handleShowDetailMap(item) {
     elements = document.getElementsByClassName('map-detai');
@@ -369,6 +381,7 @@ buttonShowMap.addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
     const myDiv = document.getElementById("responsive-js");
     function checkAndScale() {
+        setDefaultData()
        if(window.innerWidth > 820) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -386,4 +399,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener("resize", checkAndScale);
     document.addEventListener("DOMContentLoaded", checkAndScale());
+
+    function setDefaultData () {
+        const dedaultData = ApiData[0];
+
+        if(window.innerWidth > 820) {
+            document.getElementById(dedaultData.id).classList.add('clicking');
+            document.querySelector(`.map-detai.map-detail-${dedaultData.id}`).classList.add('active');
+            if(km){km.textContent = dedaultData.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
+            if(info){info.textContent = dedaultData.info; info.classList.add('animate__animated', 'animate__pulse')} ;
+            if(lanes){lanes.textContent = dedaultData.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
+            if(lanesInfor){lanesInfor.textContent = dedaultData.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
+            if(kmH){kmH.textContent = dedaultData.kmH; kmH.classList.add('animate__animated', 'animate__pulse')};
+            if(kmHinfor){kmHinfor.textContent = dedaultData.kmHinfor; kmHinfor.classList.add('animate__animated', 'animate__pulse')};
+            if(time){time.textContent = dedaultData.time; time.classList.add('animate__animated', 'animate__pulse')};
+        } else {
+            document.getElementById(dedaultData.id).classList.remove('clicking');
+        }
+    }
 });

@@ -32,6 +32,11 @@ h4 {
     cursor: pointer;
 }
 
+.button.clicking {
+    fill: rgb(198, 198, 198);
+    stroke-width: 1.54978px;
+}
+
 .button.disable {
     pointer-events: none;
     cursor: pointer;
