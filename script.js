@@ -303,6 +303,7 @@ ApiData.forEach(item => {
 });
 
 function handleActiveButtonMap(item) {
+    window.location.hash = `${item.id}`; 
     const listButton = document.querySelectorAll('.button');
     listButton.forEach(button => {
         button.classList.remove('clicking');
@@ -367,7 +368,6 @@ buttonShowMap.addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
     const myDiv = document.getElementById("responsive-js");
     function checkAndScale() {
-        setDefaultData()
        if(window.innerWidth > 820) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -385,25 +385,35 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener("resize", checkAndScale);
     document.addEventListener("DOMContentLoaded", checkAndScale());
-
-    function setDefaultData () {
-        const dedaultData = ApiData[0];
-
-        if(window.innerWidth > 820) {
-            document.getElementById(dedaultData.id).classList.add('clicking');
-            document.querySelector(`.map-detai.map-detail-${dedaultData.id}`).classList.add('active');
-            if(km){km.textContent = dedaultData.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
-            if(info){info.textContent = dedaultData.info; info.classList.add('animate__animated', 'animate__pulse')} ;
-            if(lanes){lanes.textContent = dedaultData.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
-            if(lanesInfor){lanesInfor.textContent = dedaultData.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
-            if(kmH){kmH.textContent = dedaultData.kmH; kmH.classList.add('animate__animated', 'animate__pulse')};
-            if(kmHinfor){kmHinfor.textContent = dedaultData.kmHinfor; kmHinfor.classList.add('animate__animated', 'animate__pulse')};
-            if(time){time.textContent = dedaultData.time; time.classList.add('animate__animated', 'animate__pulse')};
-        } else {
-            document.getElementById(dedaultData.id).classList.remove('clicking');
-        }
-    }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    setDefaultData()
+});
+
+function setDefaultData () {
+    const hashNumber = parseInt(window.location.hash.replace("#", ""))
+    let dedaultData;
+    
+    if(hashNumber && ApiData.length >= hashNumber){
+        dedaultData = ApiData[hashNumber - 1]
+    }else {
+        dedaultData = ApiData[0]
+    }
+    if(window.innerWidth > 820 && dedaultData) {
+        document.getElementById(dedaultData.id).classList.add('clicking');
+        document.querySelector(`.map-detai.map-detail-${dedaultData.id}`).classList.add('active');
+        if(km){km.textContent = dedaultData.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
+        if(info){info.textContent = dedaultData.info; info.classList.add('animate__animated', 'animate__pulse')} ;
+        if(lanes){lanes.textContent = dedaultData.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
+        if(lanesInfor){lanesInfor.textContent = dedaultData.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
+        if(kmH){kmH.textContent = dedaultData.kmH; kmH.classList.add('animate__animated', 'animate__pulse')};
+        if(kmHinfor){kmHinfor.textContent = dedaultData.kmHinfor; kmHinfor.classList.add('animate__animated', 'animate__pulse')};
+        if(time){time.textContent = dedaultData.time; time.classList.add('animate__animated', 'animate__pulse')};
+    } else {
+        document.getElementById(dedaultData.id).classList.remove('clicking');
+    }
+}
 
 function handleSetAnimationExtendline(percentage) {
     clearInterval(intervalResetAnimationLine);
