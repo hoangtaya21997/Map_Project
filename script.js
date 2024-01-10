@@ -438,10 +438,13 @@ function resertAnimation () {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const hashId = window.location.hash.replace("#", "")
-    const selectedItem = ApiData.find(item => item.id === hashId);
-    selectedItem && handleSetAnimationExtendline(selectedItem.finished*100/selectedItem.total)
+    
 
     const animate = document.querySelector('.map-detai.active animate');
     animate && animate.addEventListener("repeatEvent", resertAnimation());
+
+
+    const hashId = window.location.hash.replace("#", "")
+    const selectedItem = ApiData.find(item => item.id === hashId);
+    selectedItem && handleSetAnimationExtendline(selectedItem.finished*100/selectedItem.total)
 });
