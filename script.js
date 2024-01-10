@@ -437,14 +437,15 @@ function resertAnimation () {
     }, 3000);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-
-    const animate = document.querySelector('.map-detai.active animate');
-    animate && animate.addEventListener("repeatEvent", resertAnimation());
-
-
+function setAnimationWhenHaveHash () {
     const hashId = window.location.hash.replace("#", "")
     const selectedItem = ApiData.find(item => item.id === hashId);
-    selectedItem && handleSetAnimationExtendline(selectedItem.finished*100/selectedItem.total)
+    hashId && selectedItem && handleSetAnimationExtendline(selectedItem.finished*100/selectedItem.total)
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const animate = document.querySelector('.map-detai.active animate');
+    animate && animate.addEventListener("repeatEvent", resertAnimation());
+    setAnimationWhenHaveHash();
 });
+
