@@ -344,6 +344,21 @@ window.MapEdit = {
     }
 }
 
+// const logData = () => {
+//     console.log('New Data:', dataMap);
+//   };
+
+// const observer = new MutationObserver((mutationsList) => {
+//     for (const mutation of mutationsList) {
+//       if (mutation.type === 'attributes' && mutation.attributeName === 'data') {
+//         // dataMap = rootDiv.getAttribute('data');
+//         logData();
+//       }
+//     }
+//   });
+
+// observer.observe(rootDiv, { attributes: true, attributeFilter: ['data'] });
+
 if(dataMap) {
 const km = document.getElementById('km');
 const info = document.getElementById('info');
@@ -608,8 +623,6 @@ function handleUpdateUIWhithNewData (data) {
         time.classList?.remove('animate__pulse');
     }, 1000);
 }
-
-
 
 function submitEdit(data, callback) {
     const hashId = window.location.hash.replace("#", "") || "1";
