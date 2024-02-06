@@ -1,0 +1,17 @@
+{
+  "name": "thoisu-gallery-2",
+  "version": "bs.1.3",
+  "tags": [
+    "Gallery"
+  ],
+  "avatar": "./image/thumb.png",
+  "description": "",
+  "public": false,
+  "data": {},
+  "settings": {
+  },
+  "dataSources": [],
+  "styles": {},
+  "animations": {},
+  "type": 1
+}
