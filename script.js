@@ -1,6 +1,7 @@
 const ApiData = [
     {
         id:"1",
+        name: 'Ql45 - Nghi Sơn',
         info: 'Đi qua địa phận tỉnh Thanh Hóa',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -8,83 +9,95 @@ const ApiData = [
         kmHinfor: 'Sau khi hoàn chỉnh toàn tuyến sẽ là 120km/h',
         time: '01/07/2021 - 09/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
     },
     {
         id:"2",
-        km: '50KM',
+        name: 'nghi sơn - diễn châu',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 200,
+        lineLength: 100,
     },
     {
         id:"3",
-        km: '50KM',
+        name: 'diễn châu - Bãi VỌT ',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 300,
+        lineLength: 100,
     },
     {
         id:"4",
-        km: '50KM',
+        name: 'Bãi vọt - Hàm nghi',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 400,
+        lineLength: 100,
     },
     {
         id:"5",
-        km: '50KM',
+        name: 'Hàm nghi - vũng áng',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 50,
+        total: 500,
+        lineLength: 50,
+        status: {
+            isComplete: false,
+            name: 'hn-va',
+        }
     },
     {
         id:"6",
-        km: '50KM',
+        name: 'vũng áng - Bùng',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 50,
+        total: 600,
+        lineLength: 50,
+        status: {
+            isComplete: false,
+            name: 'va-b',
+        }
     },
     {
         id:"7",
-        km: '50KM',
+        name: 'Bùng -Vạn ninh',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 80,
+        total: 700,
+        lineLength: 80,
+        status: {
+            isComplete: false,
+            name: 'b-vn',
+        }
     },
     {
         id:"8",
-        km: '50KM',
+        name: 'Vạn Ninh - Cam lộ',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -92,47 +105,63 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'vn-cl',
+        }
     },
     {
         id:"9",
-        km: '50KM',
+        name: 'quảng ngãi - Hoài NHƠN',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 200,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'qn-hn',
+        }
     },
     {
         id:"10",
-        km: '50KM',
+        name: 'Hoài nhơn - Quy nhơn',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 300,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'hn-qn',
+        }
     },
     {
         id:"11",
-        km: '50KM',
+        name: 'Quy nhơn - Chí thạnh',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
         kmH: '80 km/h',
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
-        total: 100,
-        finished: 100,
+        total: 400,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'qn-ct',
+        }
     },
     {
         id:"12",
-        km: '50KM',
+        name: 'Chí thạnh - vân phong',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -140,11 +169,15 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'ct-vp',
+        }
     },
     {
         id:"13",
-        km: '50KM',
+        name: 'vân phong - nha trang',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -152,11 +185,15 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'vp-nt',
+        }
     },
     {
         id:"14",
-        km: '50KM',
+        name: 'nha trang - cam lâm',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -164,11 +201,12 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
     },
     //Show Greenline data
     {
         id:"15",
+        name: 'cam lâm - vĩnh hảo',
         info: 'Đi qua 3 tỉnh Khánh Hòa, Ninh Thuận, Bình Thuận.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -176,7 +214,7 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '30/11/2021 - 04/2024',
         total: 100,
-        finished: 100,
+        lineLength: 50,
         status: {
             isComplete: false,
             name: 'cl-vh',
@@ -184,7 +222,7 @@ const ApiData = [
     },
     {
         id:"16",
-        km: '50KM',
+        name: 'vĩnh hảo - phan thiết',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -192,11 +230,11 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
     },
     {
         id:"17",
-        km: '50KM',
+        name: 'phan thiết - dầu giây',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -204,11 +242,11 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
     },
     {
         id:"18",
-        km: '50KM',
+        name: 'Vũng Tàu - biên hoà ',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -216,11 +254,11 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
     },
     {
         id:"19",
-        km: '50KM',
+        name: 'cần thơ - Hậu giang',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -228,11 +266,15 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'ct-hg',
+        }
     },
     {
         id:"20",
-        km: '50KM',
+        name: 'Hậu giang - cà mau',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -240,11 +282,15 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'hg-cm',
+        }
     },
     {
         id:"21",
-        km: '50KM',
+        name: 'châu đốc - cần thơ - Sóc trăng',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -252,11 +298,15 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'cd-ct-st',
+        }
     },
     {
         id:"22",
-        km: '50KM',
+        name: 'Cao Lãnh - an hữu',
         info: 'Đi qua địa phận 2 tỉnh Thanh Hoá và tỉnh Nghệ An.',
         lanes: '4 làn xe, rộng 17 m ',
         lanesInfor:'Sau nâng lên 6 làn, rộng 32 m',
@@ -264,10 +314,37 @@ const ApiData = [
         kmHinfor: 'Sau nâng lên 100-120 km/h',
         time: '07/2021 - 07/2023',
         total: 100,
-        finished: 100,
+        lineLength: 100,
+        status: {
+            isComplete: false,
+            name: 'cl-ah',
+        }
     },
 ]
 
+const rootDiv = document.getElementById('root');
+
+const encodedData = JSON.stringify(ApiData);
+rootDiv.setAttribute('data', encodedData);
+
+const retrievedData = rootDiv.getAttribute('data');
+
+const buttonShowEdit = document.getElementById('buttonShowEdit')
+if(rootDiv.getAttribute('data-show-edit') == "true") {
+    if(buttonShowEdit) {buttonShowEdit.style.display = "block";}
+} else {
+    if(buttonShowEdit) {buttonShowEdit.style.display = "none";}
+}
+
+const dataMap = JSON.parse(retrievedData);
+
+window.MapEdit = {
+    onUpdateMap: (data, callback) => {
+        submitEdit(data, callback);
+    }
+}
+
+if(dataMap) {
 const km = document.getElementById('km');
 const info = document.getElementById('info');
 const lanes = document.getElementById('lanes');
@@ -276,10 +353,10 @@ const kmH = document.getElementById('kmH');
 const kmHinfor = document.getElementById('kmHinfor');
 const time = document.getElementById('time');
 const contentDiv = document.getElementById('content');
-let activeItem = 0;
+let activeItem = 1;
 let intervalResetAnimationLine;
 
-ApiData.forEach(item => {
+dataMap?.forEach(item => {
     handleFillSvgMap(item)
     const div = document.getElementById(item.id);
     div?.addEventListener('click', () => {
@@ -303,7 +380,7 @@ ApiData.forEach(item => {
 });
 
 function handleActiveButtonMap(item) {
-    window.location.hash = `${item.id}`; 
+    window.location.hash = `${item.id}`;
     const listButton = document.querySelectorAll('.button');
     listButton.forEach(button => {
         button.classList.remove('clicking');
@@ -320,20 +397,25 @@ function handleShowDetailMap(item) {
         }
         elementsActive && elementsActive.classList.add('active');
     }
-    handleSetAnimationExtendline(item.finished*100/item.total)
+    handleSetAnimationExtendline(Number(item.lineLength))
 }
 
 function handleFillSvgMap(item) {
-    if(item?.status?.isComplete) {
+    if(item?.status) {
         elements = document.getElementsByClassName(item.status.name);
         for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.add('active');
+            if (item?.status?.isComplete) {
+                elements[i].classList.add('active');
+              } else {
+                elements[i].classList.remove('active');
+            }
         }
     };
 }
 
 const handleShowInfo = (item) => {
-    if(km){km.textContent = item.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
+    console.log(item)
+    if(km){km.textContent = item.total + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
     if(info){info.textContent = item.info; info.classList.add('animate__animated', 'animate__pulse')} ;
     if(lanes){lanes.textContent = item.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
     if(lanesInfor){lanesInfor.textContent = item.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
@@ -354,7 +436,7 @@ const handleShowInfo = (item) => {
 
 //Mobile
 const buttonShowMap = document.getElementById("show-map");
-buttonShowMap.addEventListener("click", function() {
+buttonShowMap?.addEventListener("click", function() {
     window.scrollTo(0, 0);
     const map = document.getElementById("map")
     const detaiMap = document.querySelector('.map-detai.active')
@@ -371,8 +453,8 @@ document.addEventListener("DOMContentLoaded", function() {
        if(window.innerWidth > 820) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        const divWidth = myDiv.offsetWidth;
-        const divHeight = myDiv.offsetHeight;
+        const divWidth = myDiv?.offsetWidth;
+        const divHeight = myDiv?.offsetHeight;
         if (divWidth < windowWidth || divHeight < windowHeight) {
             const scaleX = windowWidth / divWidth;
             const scaleY = windowHeight / divHeight;
@@ -395,15 +477,15 @@ function setDefaultData () {
     const hashNumber = parseInt(window.location.hash.replace("#", ""))
     let dedaultData;
     
-    if(hashNumber && ApiData.length >= hashNumber){
-        dedaultData = ApiData[hashNumber - 1]
+    if(hashNumber && dataMap.length >= hashNumber){
+        dedaultData = dataMap[hashNumber - 1]
     }else {
-        dedaultData = ApiData[0]
+        dedaultData = dataMap[0]
     }
     if(window.innerWidth > 820 && dedaultData) {
-        document.getElementById(dedaultData.id).classList.add('clicking');
-        document.querySelector(`.map-detai.map-detail-${dedaultData.id}`).classList.add('active');
-        if(km){km.textContent = dedaultData.finished + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
+        document.getElementById(dedaultData.id)?.classList.add('clicking');
+        document.querySelector(`.map-detai.map-detail-${dedaultData.id}`)?.classList.add('active');
+        if(km){km.textContent = dedaultData.total + `KM`; km.classList.add('animate__animated', 'animate__pulse');};
         if(info){info.textContent = dedaultData.info; info.classList.add('animate__animated', 'animate__pulse')} ;
         if(lanes){lanes.textContent = dedaultData.lanes; lanes.classList.add('animate__animated', 'animate__pulse')};
         if(lanesInfor){lanesInfor.textContent = dedaultData.lanesInfor; lanesInfor.classList.add('animate__animated', 'animate__pulse')};
@@ -411,21 +493,21 @@ function setDefaultData () {
         if(kmHinfor){kmHinfor.textContent = dedaultData.kmHinfor; kmHinfor.classList.add('animate__animated', 'animate__pulse')};
         if(time){time.textContent = dedaultData.time; time.classList.add('animate__animated', 'animate__pulse')};
     } else {
-        document.getElementById(dedaultData.id).classList.remove('clicking');
+        document.getElementById(dedaultData.id)?.classList.remove('clicking');
     }
 }
 
 function handleSetAnimationExtendline(percentage) {
     clearInterval(intervalResetAnimationLine);
     const currentPath = document.querySelector('.map-detai.active .path-line');
-    const heightLine =  currentPath.dataset.strokeDasharray;
+    const heightLine =  currentPath?.dataset?.strokeDasharray;
     const animateMotion = document.querySelector('.map-detai.active animateMotion');
     const animate = document.querySelector('.map-detai.active animate');
-    animate.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
-    animateMotion.setAttribute('keyPoints', `0;${percentage/100}; ${percentage/100}`);
-    animateMotion.beginElement();
-    animate.beginElement();
-    resertAnimation()
+    animate?.setAttribute('to', `${heightLine - (percentage*heightLine/100)}`);
+    animateMotion?.setAttribute('keyPoints', `0.05;${percentage/100}; ${percentage/100}`);
+    animateMotion?.beginElement();
+    animate?.beginElement();
+    resertAnimation();
 }
 
 function resertAnimation () {
@@ -439,8 +521,8 @@ function resertAnimation () {
 
 function setAnimationWhenHaveHash () {
     const hashId = window.location.hash.replace("#", "")
-    const selectedItem = ApiData.find(item => item.id === hashId);
-    hashId && selectedItem && handleSetAnimationExtendline(selectedItem.finished*100/selectedItem.total)
+    const selectedItem = dataMap.find(item => item.id === hashId);
+    hashId && selectedItem && handleSetAnimationExtendline(Number(selectedItem.lineLength))
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -449,3 +531,105 @@ document.addEventListener("DOMContentLoaded", function() {
     setAnimationWhenHaveHash();
 });
 
+
+let newDataChange = {}
+function showFormEditData() {
+    const name = document.getElementById("name");
+    const kmTotalInput = document.getElementById("kmTotalInput");
+    const kmInput = document.getElementById("kmInput");
+    const infoInput = document.getElementById("infoInput");
+    const lanesInput = document.getElementById("lanesInput");
+    const lanesInforInput = document.getElementById("lanesInforInput");
+    const kmHInput = document.getElementById("kmHInput");
+    const kmHinforInput = document.getElementById("kmHinforInput");
+    const timeInput = document.getElementById("timeInput");
+    const isComplete = document.getElementById("statusButton");
+    const checkboxButton = document.getElementById("checkboxActiveButton");
+    const hashId = window.location.hash.replace("#", "") || "1";
+    const selectedItem = dataMap.find(item => item.id === hashId);
+    if (selectedItem) {
+        name.textContent = selectedItem.name;
+        kmTotalInput.value = selectedItem.total;
+        kmInput.value = selectedItem.lineLength;
+        infoInput.value = selectedItem.info;
+        lanesInput.value = selectedItem.lanes ;
+        lanesInforInput.value = selectedItem.lanesInfor;
+        kmHInput.value = selectedItem.kmH;
+        kmHinforInput.value = selectedItem.kmHinfor;
+        timeInput.value = selectedItem.time;
+        if(selectedItem.status){
+            checkboxButton.style.display = "flex"
+            isComplete.checked = selectedItem.status.isComplete;
+        } else {
+            checkboxButton.style.display = "none"
+        }
+        document.getElementById("popup-edit").style.display = 'flex';
+    }
+}
+
+function handleClosePopUp () {
+    document.getElementById("popup-edit").style.display = 'none'
+}
+function updateData(property, value) {
+    // Lấy dữ liệu từ mảng data theo id
+    const hashId = window.location.hash.replace("#", "") || "1";
+    
+    const result = dataMap.find(item => item.id === hashId);
+    if (result) {
+        result[property] = value;
+        newDataChange = result;
+    }
+}
+
+function toggleActiveButton(property, value) {
+    const hashId = window.location.hash.replace("#", "") || "1";
+    const result = dataMap.find(item => item.id === hashId);
+    result.status[property] = value;
+    newDataChange = result;
+}
+
+function handleUpdateUIWhithNewData (data) {
+    handleFillSvgMap(data);
+    if(Number(data.lineLength)){handleSetAnimationExtendline(Number(data.lineLength))}
+    if(km){km.textContent = data.total + `KM`; km.classList?.add('animate__animated', 'animate__pulse');};
+    if(info){info.textContent = data.info; info.classList?.add('animate__animated', 'animate__pulse')} ;
+    if(lanes){lanes.textContent = data.lanes; lanes.classList?.add('animate__animated', 'animate__pulse')};
+    if(lanesInfor){lanesInfor.textContent = data.lanesInfor; lanesInfor.classList?.add('animate__animated', 'animate__pulse')};
+    if(kmH){kmH.textContent = data.kmH; kmH.classList?.add('animate__animated', 'animate__pulse')};
+    if(kmHinfor){kmHinfor.textContent = data.kmHinfor; kmHinfor.classList?.add('animate__animated', 'animate__pulse')};
+    if(time){time.textContent = data.time; time.classList?.add('animate__animated', 'animate__pulse')};
+    setTimeout(function() {
+        km.classList?.remove('animate__pulse');
+        info.classList?.remove('animate__pulse');
+        lanes.classList?.remove('animate__pulse');
+        lanesInfor.classList.remove('animate__pulse');
+        kmH.classList?.remove('animate__pulse');
+        kmHinfor.classList?.remove('animate__pulse');
+        time.classList?.remove('animate__pulse');
+    }, 1000);
+}
+
+
+
+function submitEdit(data, callback) {
+    const hashId = window.location.hash.replace("#", "") || "1";
+
+    const encodedData = JSON.stringify(dataMap);
+    const rootDiv = document.getElementById('root');
+    rootDiv.setAttribute('data', encodedData);
+
+    if(Object.keys(data).length !== 0 && hashId === data.id){ 
+        handleUpdateUIWhithNewData(data)
+    }
+    document.getElementById("popup-edit").style.display = 'none'
+    if (callback) {
+      callback();
+    }
+}
+
+function handleOnclickButtonSubmit (){
+    window.MapEdit.onUpdateMap(newDataChange, function() {
+        console.log("Update completed!");
+    });
+}
+}
